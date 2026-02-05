@@ -52,6 +52,8 @@ The work includes:
 ---
 ## Repository Structure
 
+````
+
 ├── .github/
 │   └── ISSUE_TEMPLATE/                 # Issue templates for the repository
 │
@@ -88,7 +90,7 @@ The work includes:
 ├── README.md                            # Project documentation
 ├── LICENSE                              # License information
 └── LEGAL.md                             # Legal notices and attributions
-
+````
 ---
 
 ## Key Outcomes (Work in Progress)
