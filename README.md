@@ -43,27 +43,60 @@ The work includes:
 
 ## Technologies & Tools
 
-Python (pandas, NumPy, scikit-learn)
+* Python (pandas, NumPy, scikit-learn)
+* Snowflake ML & Snowpark for Python
+* Jupyter / Snowflake Notebooks
+* Data visualization (Matplotlib, Seaborn, Plotly)
+* Optimization & modeling libraries (as applicable)
 
-Snowflake ML & Snowpark for Python
+---
+## Repository Structure
 
-Jupyter / Snowflake Notebooks
-
-Data visualization (Matplotlib, Seaborn, Plotly)
-
-Optimization & modeling libraries (as applicable)
+├── .github/
+│   └── ISSUE_TEMPLATE/                 # Issue templates for the repository
+│
+├── scripts/
+│   └── snowflake_setup.sql              # Snowflake environment and setup scripts
+│
+├── .gitignore                           # Git ignore rules
+├── BENCHMARK_MODEL_NOTEBOOK_SNOWFLAKE.ipynb
+│                                       # Benchmark ML model notebook in Snowflake
+├── LANDSAT_DATA_EXTRACTION_NOTEBOOK_SNOWFLAKE.ipynb
+│                                       # Data extraction from Landsat satellite sources
+├── TERRACLIMATE_DATA_EXTRACTION_NOTEBOOK_SNOWFLAKE.ipynb
+│                                       # TerraClimate data extraction and preprocessing
+├── TERRACLIMATE_DEMONSTRATION_NOTEBOOK.ipynb
+│                                       # Demonstration and analysis using TerraClimate data
+├── getting_started_notebook.ipynb
+│                                       # Introductory notebook for the challenge workflow
+├── landsat_demo_notebook_snowflake.ipynb
+│                                       # Landsat data demo using Snowflake
+│
+├── landsat_features_training.csv        # Training features derived from Landsat data
+├── landsat_features_validation.csv      # Validation features derived from Landsat data
+│
+├── terraclimate_features_training.csv   # Training features from TerraClimate datasets
+├── terraclimate_features_validation.csv # Validation features from TerraClimate datasets
+├── terraclimate_parameters.png          # Visualization of TerraClimate parameters
+│
+├── water_quality_training_dataset.csv   # Water quality training dataset
+│
+├── submission.csv                       # Model predictions for challenge submission
+├── submission_template.csv              # Official submission template
+│
+├── requirements.txt                     # Python dependencies
+├── README.md                            # Project documentation
+├── LICENSE                              # License information
+└── LEGAL.md                             # Legal notices and attributions
 
 ---
 
 ## Key Outcomes (Work in Progress)
 
-Identification of key drivers affecting water demand
-
-Baseline predictive models with evaluation metrics (e.g., RMSE, MAE, R²)
-
-Initial optimization strategies to reduce waste and improve allocation
-
-Clear, modular pipeline suitable for further scaling and experimentation
+* Identification of key drivers affecting water demand
+* Baseline predictive models with evaluation metrics (e.g., RMSE, MAE, R²)
+* Initial optimization strategies to reduce waste and improve allocation
+* Clear, modular pipeline suitable for further scaling and experimentation
 
 ---
 
@@ -73,6 +106,21 @@ For prerequisites, setup, step-by-step guide and instructions, please refer to t
 When you are ready to learn more about ML Development in Snowflake, you can follow this Developer Guide called ["Getting Started with Machine Learning Development in Snowflake"](https://www.snowflake.com/en/developers/guides/intro-to-machine-learning-with-snowpark-ml-for-python/#0).
 
 In this guide, you will build a simple ML development workflow from feature engineering to model training and inference using Snowflake ML in Snowflake Notebooks on Container Runtime. 
+
+---
+
+## Author
+
+**Bárbara Ángeles Ortiz**
+
+<img src="https://github.com/user-attachments/assets/30ea0d40-a7a9-4b19-a835-c474b5cc50fb" width="115">
+
+[LinkedIn](https://www.linkedin.com/in/barbaraangelesortiz/) 
+
+![Status](https://img.shields.io/badge/status-in%20progress-yellow) 📅 February 2026
+
+![Python](https://img.shields.io/badge/python-3.10-blue)
+![Pandas](https://img.shields.io/badge/pandas-2.1.0-blue)
 
 ---
 
