@@ -1,4 +1,4 @@
-# EY AI & Data Challenge – Fork by Barbara Ángeles Ortiz
+# Satellite climate water ml
 
 ## Overview
 This repository is a fork of the official EY AI & Data Challenge and contains my work for the 2026 EY AI & Data Challenge: Optimizing Clean Water Supply.
