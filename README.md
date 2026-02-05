@@ -53,7 +53,7 @@ The work includes:
 ## Repository Structure
 
 ````
-
+satellite-climate-water-ml
 ├── .github/
 │   └── ISSUE_TEMPLATE/                 # Issue templates for the repository
 │
