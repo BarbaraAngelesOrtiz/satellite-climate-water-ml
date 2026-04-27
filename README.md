@@ -16,16 +16,12 @@ This fork is maintained by Barbara Ángeles Ortiz and is used as a hands-on envi
 ---
 ## Project Description
 
-This project explores how data-driven and AI-based approaches can be applied to optimize clean water supply systems under real-world constraints.
+This project explores how data-driven and AI-based approaches can be applied to optimize clean water supply systems. Specifically, this repository has been updated for **Phase 2** of the challenge, focusing on:
 
-The work includes:
-
-* Exploratory Data Analysis (EDA) to understand consumption patterns and regional needs
-* Feature engineering and data preparation for ML models
-* Predictive modeling to estimate future water demand
-* Optimization approaches to support efficient allocation of water resources
-* Evaluation of solutions using performance and sustainability-oriented metrics
-* The repository is structured to support reproducible experimentation and iterative improvement.
+* **Advanced Feature Engineering:** Integration of high-resolution climate data, including **Potential Evapotranspiration (PET)**, **Precipitation (PR)**, and **Maximum Temperature (TMAX)**.
+* **Model Robustness & Generalization:** Moving beyond baseline models to address overfitting by comparing **RandomForest** (high-variance) against **HistGradientBoosting** (robust-regularized) architectures.
+* **Spatial Join Optimization:** Implementation of KDTree-based spatial joins to efficiently map climate data to water sampling coordinates.
+* **Iterative ML Workflow:** Evaluation of models based on their ability to generalize to unseen data, prioritizing stable $R^2$ metrics over training-only performance.
 
 ---
 
@@ -40,14 +36,14 @@ The work includes:
 📊 Deliver insights that support data-driven decision-making in water management
 
 ---
-
 ## Technologies & Tools
 
-* Python (pandas, NumPy, scikit-learn)
-* Snowflake ML & Snowpark for Python
-* Jupyter / Snowflake Notebooks
-* Data visualization (Matplotlib, Seaborn, Plotly)
-* Optimization & modeling libraries (as applicable)
+* **Python:** pandas, NumPy, scikit-learn
+* **Machine Learning:** RandomForestRegressor, HistGradientBoostingRegressor
+* **Spatial Analysis:** Scipy (cKDTree for efficient coordinate mapping)
+* **Cloud Infrastructure:** Snowflake ML & Snowpark for Python
+* **Data Sources:** Microsoft Planetary Computer (TerraClimate, Landsat)
+* **Visualization:** Matplotlib, Seaborn
 
 ---
 ## Repository Structure
@@ -77,13 +73,18 @@ satellite-climate-water-ml
 ├── landsat_features_training.csv        # Training features derived from Landsat data
 ├── landsat_features_validation.csv      # Validation features derived from Landsat data
 │
+├── landsat_features_training_fase2.csv   # Updated training features (Phase 2)
+├── landsat_features_validation_fase2.csv # Updated validation features (Phase 2)
+│
 ├── terraclimate_features_training.csv   # Training features from TerraClimate datasets
 ├── terraclimate_features_validation.csv # Validation features from TerraClimate datasets
 ├── terraclimate_parameters.png          # Visualization of TerraClimate parameters
 │
+├── terraclimate_features_training_fase2.csv   # Phase 2 Climate features (pet, pr, tmax)
+├── terraclimate_features_validation_fase2.csv # Phase 2 Climate features (pet, pr, tmax)
 ├── water_quality_training_dataset.csv   # Water quality training dataset
 │
-├── submission.csv                       # Model predictions for challenge submission
+├── submission.csv                       # Final predictions using robust models
 ├── submission_template.csv              # Official submission template
 │
 ├── requirements.txt                     # Python dependencies
@@ -93,12 +94,12 @@ satellite-climate-water-ml
 ````
 ---
 
-## Key Outcomes (Work in Progress)
+## Key Outcomes
 
-* Identification of key drivers affecting water demand
-* Baseline predictive models with evaluation metrics (e.g., RMSE, MAE, R²)
-* Initial optimization strategies to reduce waste and improve allocation
-* Clear, modular pipeline suitable for further scaling and experimentation
+* **Reduced Model Overfitting:** Successfully narrowed the gap between Training and Testing $R^2$ by implementing regularized Gradient Boosting techniques.
+* **Climate Feature Impact:** Identified **Precipitation (PR)** and **Temperature (TMAX)** as key drivers for improving water quality prediction stability.
+* **Scalable Pipeline:** Created a robust, modular pipeline that handles spatial coordinate matching and multi-target prediction (Total Alkalinity, Conductance, and Phosphorus).
+* **Automated Comparative Analysis:** Developed a comparison framework to evaluate model performance across different algorithms and versions.
 
 ---
 
