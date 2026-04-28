@@ -46,10 +46,9 @@ Our feature engineering strategy was driven by two key insights:
 2. **Temporal Dynamics:** Seasonal trends highlighted the necessity of including Precipitation (PR) and Maximum Temperature (TMAX) to capture water quality fluctuations over time.
 
 ![Target Correlations](images/Target%20correlations.png)
-*Figure 2: Correlation heatmap between target parameters.*
 
 ![Seasonality](images/Seasonality.png)
-*Figure 3: Seasonal trends analysis highlighting climatic influence.*
+
 ---
 
 ## Project Objectives
@@ -67,7 +66,6 @@ Our feature engineering strategy was driven by two key insights:
 To understand the spatial distribution of the water quality data, we mapped the sampling stations used in this challenge.
 
 ![Sampling Locations](images/Sampling%20locations.png)
-*Figure 1: Geographic distribution of sampling stations.*
 
 ---
 ## 📊 Model Performance Summary (Phase 2)
@@ -157,7 +155,7 @@ We achieved stable and reliable predictions across all three parameters using ou
 
 | Total Alkalinity | Electrical Conductance | Dissolved Reactive Phosphorus |
 | :---: | :---: | :---: |
-| ![Alkalinity](images/Total%20Alkalinity.png) | ![Conductance](images/Electrical%20conductance.png) | ![Phosphorus](images/Dissolved%20Reactive%20Phosphorus.png) |
+| ![Alkalinity](images/Total%20Alkalinity.png) | ![Conductance](images/Electrical%20Conductance.png) | ![Phosphorus](images/Dissolved%20Reactive%20Phosphorus.png) |
 | *Stable Predictions* | *Conductivity Trends* | *Phosphorus Estimation* |
 ---
 ## Step-By-Step Guide
@@ -177,7 +175,7 @@ In this guide, you will build a simple ML development workflow from feature engi
 
 [LinkedIn](https://www.linkedin.com/in/barbaraangelesortiz/) 
 
-![Status](https://img.shields.io/badge/status-in%20progress-yellow) 📅 February 2026
+![Status](https://img.shields.io/badge/status-Finished-green) 📅 Abril 2026
 
 ![Python](https://img.shields.io/badge/python-3.10-blue)
 ![Pandas](https://img.shields.io/badge/pandas-2.1.0-blue)
