@@ -14,6 +14,11 @@ This fork is maintained by Barbara Ángeles Ortiz and is used as a hands-on envi
 🔗 Official Challenge: [EY AI & Data Challenge 2026](https://challenge.ey.com/challenges/2026-optimizing-clean-water-supply)
 
 ---
+## 🌍 Why This Matters
+
+By accurately predicting water quality parameters through remote sensing and machine learning, we can significantly reduce the reliance on costly and labor-intensive physical sampling. This data-driven approach provides **scalable, real-time insights** to ensure safer water distribution and improved resource management, particularly in **underserved regions** where traditional monitoring infrastructure is often limited.
+
+---
 ## Project Description
 
 This project explores how data-driven and AI-based approaches can be applied to optimize clean water supply systems. Specifically, this repository has been updated for **Phase 2** of the challenge, focusing on:
@@ -23,6 +28,28 @@ This project explores how data-driven and AI-based approaches can be applied to 
 * **Spatial Join Optimization:** Implementation of KDTree-based spatial joins to efficiently map climate data to water sampling coordinates.
 * **Iterative ML Workflow:** Evaluation of models based on their ability to generalize to unseen data, prioritizing stable $R^2$ metrics over training-only performance.
 
+---
+## 🧪 Methodology & Feature Engineering
+
+The model's predictive power stems from the synergy between spectral satellite data and localized climatic variables:
+
+* **Spectral Indices (Landsat):**
+    * **NDMI & MNDWI:** Used as proxies for water surface moisture and open water detection.
+    * **SWIR Bands:** Critical for distinguishing between suspended sediments and organic matter.
+* **Climatic Drivers (TerraClimate):**
+    * **Precipitation (PR):** Captures runoff events that introduce pollutants and minerals into water bodies.
+    * **Max Temperature (TMAX):** Accounts for thermal effects on chemical solubility and biological activity.
+    * **PET:** Provides context on evaporation rates affecting mineral concentrations.
+
+Our feature engineering strategy was driven by two key insights:
+1. **Target Independence:** The correlation analysis showed distinct behaviors for each parameter, justifying the use of individual models.
+2. **Temporal Dynamics:** Seasonal trends highlighted the necessity of including Precipitation (PR) and Maximum Temperature (TMAX) to capture water quality fluctuations over time.
+
+![Target Correlations](images/Target%20correlations.png)
+*Figure 2: Correlation heatmap between target parameters.*
+
+![Seasonality](images/Seasonality.png)
+*Figure 3: Seasonal trends analysis highlighting climatic influence.*
 ---
 
 ## Project Objectives
@@ -36,6 +63,27 @@ This project explores how data-driven and AI-based approaches can be applied to 
 📊 Deliver insights that support data-driven decision-making in water management
 
 ---
+## 🔍 Exploratory Data Analysis
+To understand the spatial distribution of the water quality data, we mapped the sampling stations used in this challenge.
+
+![Sampling Locations](images/Sampling%20locations.png)
+*Figure 1: Geographic distribution of sampling stations.*
+
+---
+## 📊 Model Performance Summary (Phase 2)
+
+We prioritized **model stability** over raw training accuracy. Below are the metrics for our production-ready **HistGradientBoosting** models:
+
+| Parameter | $R^2$ (Train) | $R^2$ (Test) | Generalization Gap | Status |
+| :--- | :---: | :---: | :---: | :---: |
+| **Total Alkalinity** | 0.405 | 0.241 | 0.164 | ✅ Stable |
+| **Electrical Conductance** | 0.412 | 0.209 | 0.203 | ✅ Stable |
+| **Dissolved Reactive Phosphorus** | 0.378 | 0.209 | 0.169 | ✅ Stable |
+
+*Note: While RandomForest achieved $R^2 > 0.85$ in training, it suffered from extreme overfitting ($R^2 < 0.10$ in test). The HistGradientBoosting approach was chosen for its reliable performance on unseen data.*
+
+---
+
 ## Technologies & Tools
 
 * **Python:** pandas, NumPy, scikit-learn
@@ -87,7 +135,8 @@ satellite-climate-water-ml
 ├── submission.csv                       # Final predictions using robust models
 ├── submission_template.csv              # Official submission template
 │
-├── requirements.txt                     # Python dependencies
+├── requirements.txt                     # Dependencies
+├── images                               # Figures
 ├── README.md                            # Project documentation
 ├── LICENSE                              # License information
 └── LEGAL.md                             # Legal notices and attributions
@@ -102,7 +151,15 @@ satellite-climate-water-ml
 * **Automated Comparative Analysis:** Developed a comparison framework to evaluate model performance across different algorithms and versions.
 
 ---
+## 📊 Model Performance Results
 
+We achieved stable and reliable predictions across all three parameters using our regularized Gradient Boosting pipeline.
+
+| Total Alkalinity | Electrical Conductance | Dissolved Reactive Phosphorus |
+| :---: | :---: | :---: |
+| ![Alkalinity](images/Total%20Alkalinity.png) | ![Conductance](images/Electrical%20conductance.png) | ![Phosphorus](images/Dissolved%20Reactive%20Phosphorus.png) |
+| *Stable Predictions* | *Conductivity Trends* | *Phosphorus Estimation* |
+---
 ## Step-By-Step Guide
 For prerequisites, setup, step-by-step guide and instructions, please refer to the [Developer Guide](https://www.snowflake.com/en/developers/guides/ey-ai-and-data-challenge/).
 
@@ -126,7 +183,12 @@ In this guide, you will build a simple ML development workflow from feature engi
 ![Pandas](https://img.shields.io/badge/pandas-2.1.0-blue)
 
 ---
+## 🙏 Acknowledgments
+* **Microsoft Planetary Computer:** For providing seamless access to Landsat and TerraClimate catalogs.
+* **EY AI & Data Challenge:** For the opportunity to work on real-world sustainability problems.
+* **Snowflake:** For the high-performance compute environment used for data extraction and ML training.
 
+---
 ## Copyright
 - Original contents © 2026 EY.  
 - Contents in `/scripts/` © 2026 Snowflake Inc. under Apache 2 License.  
