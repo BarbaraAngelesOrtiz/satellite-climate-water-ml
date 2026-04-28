@@ -28,6 +28,8 @@ This project explores how data-driven and AI-based approaches can be applied to 
 * **Spatial Join Optimization:** Implementation of KDTree-based spatial joins to efficiently map climate data to water sampling coordinates.
 * **Iterative ML Workflow:** Evaluation of models based on their ability to generalize to unseen data, prioritizing stable $R^2$ metrics over training-only performance.
 
+<img src="images/schema.png" width="600">
+
 ---
 ## 🧪 Methodology & Feature Engineering
 
