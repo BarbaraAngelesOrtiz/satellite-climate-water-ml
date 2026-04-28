@@ -30,8 +30,6 @@ This project explores how data-driven and AI-based approaches can be applied to 
 
 <img src="images/schema.png" width="800">
 
-!(images/schema.png)
-
 ---
 ## 🧪 Methodology & Feature Engineering
 
